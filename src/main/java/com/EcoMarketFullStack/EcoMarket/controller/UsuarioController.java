@@ -46,15 +46,15 @@ public class UsuarioController {
     @PutMapping("{id}")
     public ResponseEntity<Usuario> actualizar(@PathVariable Integer id, @RequestBody Usuario usuario){
         try {
-            Usuario pac = usuarioService.findById(id);
-            pac.setId(id);
-            pac.setRun(usuario.getRun());
-            pac.setNombres(usuario.getNombres());
-            pac.setApellidos(usuario.getApellidos());
-            pac.setFechaNacimiento(usuario.getFechaNacimiento());
-            pac.setEmail(usuario.getEmail());
+            Usuario user = usuarioService.findById(id);
+            user.setId(id);
+            user.setRun(usuario.getRun());
+            user.setNombres(usuario.getNombres());
+            user.setApellidos(usuario.getApellidos());
+            user.setFechaNacimiento(usuario.getFechaNacimiento());
+            user.setEmail(usuario.getEmail());
 
-            usuarioService.save(pac);
+            usuarioService.save(user);
             return ResponseEntity.ok(usuario);
         } catch (Exception e) {
             return ResponseEntity.notFound().build();

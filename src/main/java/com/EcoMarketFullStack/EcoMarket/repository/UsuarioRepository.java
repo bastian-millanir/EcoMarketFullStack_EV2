@@ -11,15 +11,15 @@ import java.util.List;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 
-    List<Usuario> findByApellido(String apellido);
+    List<Usuario> findByApellidos(String apellidos);
     
-    Usuario findByCorreo(String correo);
+    Usuario findByEmail(String email);
 
-    List<Usuario> findByNombreAndApellido(String nombre, String Apellido);
+    List<Usuario> findByNombresAfterAndApellidos(String nombres, String Apellidos);
 
     @Query("SELECT p FROM Usuario p WHERE p.apellidos= :ap")
-    List<Usuario> buscarPorApellido(@Param("apellido") String ap);
+    List<Usuario> buscarPorApellidos(@Param("apellidos") String ap);
 
-    @Query(value="SELECT * FROM paciente WHERE correo = :correo", nativeQuery= true)
-    Usuario buscarPorCorreo(@Param("correo") String correo);
+    @Query(value="SELECT * FROM Usuario WHERE email = :email", nativeQuery= true)
+    Usuario buscarPorEmail(@Param("email") String email);
 }

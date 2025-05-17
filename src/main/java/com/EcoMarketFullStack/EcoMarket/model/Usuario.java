@@ -30,7 +30,7 @@ public class Usuario {
     private String apellidos;
 
     @Column(nullable=true)
-    private Date fechaNacimiento;
+    private String fechaNacimiento;
 
     @Column(nullable=false)
     private String email;
