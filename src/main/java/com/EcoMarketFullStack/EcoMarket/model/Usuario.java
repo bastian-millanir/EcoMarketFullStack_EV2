@@ -37,6 +37,6 @@ public class Usuario {
 
     @ManyToOne
     @JoinColumn(name = "userId", nullable = false, unique = true)
-    private TipoUsuario tipoUsuario;
+    private UserId userId;
 
 }
