@@ -2,11 +2,16 @@ package com.EcoMarketFullStack.EcoMarket.model;
 
 import java.sql.Time;
 import java.util.Date;
-import jakarta.annotation.Generated;
+
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -31,5 +36,16 @@ public class Pedido {
     @Column(nullable=false)
     private Time hora_pedido;
 
-    @Column
+    @Column(nullable = false)
+    private Integer costo;
+
+    @Column (nullable = false)
+    private String direccionEntrega;
+
+    @Column (nullable = true)
+    private String comentario;
+
+    @ManyToOne
+    @JoinColumn (name = "id_usuario",nullable = false )
+    private Usuario usuario;
 }

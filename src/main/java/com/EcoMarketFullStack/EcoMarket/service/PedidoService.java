@@ -4,6 +4,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.EcoMarketFullStack.EcoMarket.model.Pedido;
+import com.EcoMarketFullStack.EcoMarket.repository.PedidoRepository;
 
 import jakarta.transaction.Transactional;
 
