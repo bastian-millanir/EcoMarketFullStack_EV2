@@ -18,4 +18,6 @@ public class UserId {
 
     @Column(unique=true, length=13, nullable=false)
     private String name;
+
+    
 }
