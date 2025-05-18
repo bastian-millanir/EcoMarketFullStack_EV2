@@ -1,5 +1,9 @@
 package com.EcoMarketFullStack.EcoMarket.model;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -36,5 +40,9 @@ public class Usuario {
     @ManyToOne
     @JoinColumn(name = "userId", nullable = false, unique = true)
     private UserId userId;
+
+    @OneToMany(mappedBy = "Usuario")
+    @JsonIgnore
+    private List<Pedido> pedidos;
 
 }

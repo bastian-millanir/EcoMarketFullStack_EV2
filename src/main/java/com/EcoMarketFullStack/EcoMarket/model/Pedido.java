@@ -1,5 +1,6 @@
 package com.EcoMarketFullStack.EcoMarket.model;
 
+import java.math.BigDecimal;
 import java.sql.Time;
 import java.util.Date;
 
@@ -37,7 +38,7 @@ public class Pedido {
     private Time hora_pedido;
 
     @Column(nullable = false)
-    private Integer costo;
+    private  BigDecimal costo;
 
     @Column (nullable = false)
     private String direccionEntrega;
