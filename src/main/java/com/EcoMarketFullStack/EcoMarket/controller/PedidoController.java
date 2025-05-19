@@ -68,7 +68,6 @@ public class PedidoController {
           pedi.setHora_pedido(pedido.getHora_pedido());
           pedi.setCosto(pedido.getCosto());
           pedi.setComentario(pedido.getComentario());
-          pedi.setDireccionEntrega(pedido.getDireccionEntrega());
           
           pedidoService.save(pedi);
           return ResponseEntity.ok(pedido);
