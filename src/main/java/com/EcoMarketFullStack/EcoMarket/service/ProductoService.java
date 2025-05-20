@@ -1,15 +1,15 @@
 package com.EcoMarketFullStack.EcoMarket.service;
 
-import com.EcoMarketFullStack.EcoMarket.model.Producto;
-import com.EcoMarketFullStack.EcoMarket.model.Usuario;
-import com.EcoMarketFullStack.EcoMarket.repository.ProductoRepository;
-import com.EcoMarketFullStack.EcoMarket.repository.UsuarioRepository;
-import jakarta.transaction.Transactional;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-// 
+import com.EcoMarketFullStack.EcoMarket.model.Producto;
+import com.EcoMarketFullStack.EcoMarket.repository.ProductoRepository;
+
+import jakarta.transaction.Transactional;
+//  FIX IMPORT
 @Service
 @Transactional
 public class ProductoService {
