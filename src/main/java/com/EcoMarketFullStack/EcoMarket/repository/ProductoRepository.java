@@ -1,7 +1,6 @@
 package com.EcoMarketFullStack.EcoMarket.repository;
-
+// FIX INTERFACE
 import com.EcoMarketFullStack.EcoMarket.model.Producto;
-import com.EcoMarketFullStack.EcoMarket.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
