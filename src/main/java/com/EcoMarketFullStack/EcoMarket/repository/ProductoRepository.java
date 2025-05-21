@@ -10,16 +10,16 @@ import java.util.List;
 
 @Repository
 public interface ProductoRepository extends JpaRepository<Producto, Integer> {
-    List<Producto> findByNombreProductos(String nombre_producto); 
+    List<Producto> findByNombre_producto(String nombre_producto); 
     
-    Producto findBySku(Integer id);
+    Producto findByid(Integer id);
 
-    List<Producto> findByNombreProductoAndSku(String nombre_producto, Integer id);
+    List<Producto> findByNombre_productoAndId(String nombre_producto, Integer id);
 
-    @Query("SELECT p FROM Producto p WHERE p.nombre_producto= :np")
-    List<Producto> buscarPorNombreProducto(@Param("nombre_producto") String np);
+    @Query("SELECT p FROM Producto p WHERE p.nombre_producto= :nombre_producto")
+    List<Producto> buscarPorNombre_Productos(@Param("nombre_producto") String nombre_producto);
 
-    @Query(value="SELECT * FROM Producto WHERE id = :id", nativeQuery= true)
-    Producto buscarPorIProducto(@Param("id") Integer id); //
+    @Query(value="SELECT * FROM producto WHERE id = :id", nativeQuery= true)
+    Producto buscarPorId(@Param("id") Integer id); //
 
 }
