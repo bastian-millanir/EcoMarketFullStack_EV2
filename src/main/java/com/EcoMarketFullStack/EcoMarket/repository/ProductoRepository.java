@@ -1,5 +1,5 @@
 package com.EcoMarketFullStack.EcoMarket.repository;
-// FIX INTERFACE
+
 import com.EcoMarketFullStack.EcoMarket.model.Producto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -10,16 +10,16 @@ import java.util.List;
 
 @Repository
 public interface ProductoRepository extends JpaRepository<Producto, Integer> {
-    List<Producto> findByNombreProductos(String nombreProducto); // cambiar atributo en Model Producto 
+    List<Producto> findByNombreProductos(String nombre_producto); 
     
-    Producto findBySku(Integer sku);
+    Producto findBySku(Integer id);
 
-    List<Producto> findByNombreProductoAndSku(String nombreProducto, Integer sku);
+    List<Producto> findByNombreProductoAndSku(String nombre_producto, Integer id);
 
-    @Query("SELECT p FROM Producto p WHERE p.nombreProducto= :np")
-    List<Producto> buscarPorNombreProducto(@Param("nombreProducto") String np);
+    @Query("SELECT p FROM Producto p WHERE p.nombre_producto= :np")
+    List<Producto> buscarPorNombreProducto(@Param("nombre_producto") String np);
 
-    @Query(value="SELECT * FROM Producto WHERE sku = :sku", nativeQuery= true)
-    Producto buscarPorSku(@Param("sku") Integer sku);
+    @Query(value="SELECT * FROM Producto WHERE id = :id", nativeQuery= true)
+    Producto buscarPorIProducto(@Param("id") Integer id); //
 
 }
