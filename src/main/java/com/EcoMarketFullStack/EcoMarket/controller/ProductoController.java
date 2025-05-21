@@ -49,7 +49,7 @@ public class ProductoController {
     public ResponseEntity<Producto> actualizar(@PathVariable Integer id, @RequestBody Producto producto){
         try {
             Producto product = productoService.findById(id);
-            product.setSku(id);
+            product.setId(id);
             product.setNombre_producto(producto.getNombre_producto());
             product.setPrecio(producto.getPrecio());
             product.setStock(producto.getStock());
