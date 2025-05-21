@@ -18,7 +18,7 @@ public class Producto {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer sku;
+    private Integer id;
 
     @Column(unique=true, length = 100, nullable=false)
     private String nombre_producto;
@@ -30,8 +30,8 @@ public class Producto {
     private Integer stock;
 
     @OneToMany
-    @JoinColumn(name = "sku", nullable = false, unique = true)
-    private Pedido id_pedido;  // PREGUNTAR SI CREARON LA CLASE ITEM_PEDIDO, PREGUNTAR EL NOMBRE COLUMNA ID DEL PEDIDO
+    @JoinColumn(name = "id", nullable = false, unique = true)
+    private Pedido idPedido;  // 
 
 
 
