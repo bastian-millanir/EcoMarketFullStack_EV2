@@ -3,10 +3,11 @@ package com.EcoMarketFullStack.EcoMarket.model;
 import java.math.BigDecimal;
 import java.sql.Time;
 import java.util.Date;
-import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
+
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -50,7 +51,7 @@ public class Pedido {
     @JoinColumn (name = "id_usuario",nullable = false )
     private Usuario usuario;
 
-    @OneToOne(mappedBy = "pedido")
-    @JsonIgnore
-    private List<Envio> envios;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "envio_id")
+    private Envio envio;
 }
