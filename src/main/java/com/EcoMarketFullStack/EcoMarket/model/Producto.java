@@ -29,9 +29,9 @@ public class Producto {
     @Column(unique=true, length=100, nullable=false)
     private Integer stock;
 
-    @OneToMany
-    @JoinColumn(name = "id", nullable = false, unique = true)
-    private Pedido idPedido;  // 
+    @ManyToOne
+    @JoinColumn(name = "pedido", nullable = false, unique = true)
+    private Pedido pedido;  // 
 
 
 
