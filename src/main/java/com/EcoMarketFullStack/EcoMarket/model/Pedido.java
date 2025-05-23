@@ -5,8 +5,8 @@ import java.sql.Time;
 import java.util.Date;
 
 
-
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -53,5 +53,6 @@ public class Pedido {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "envio_id")
+    @JsonManagedReference
     private Envio envio;
 }

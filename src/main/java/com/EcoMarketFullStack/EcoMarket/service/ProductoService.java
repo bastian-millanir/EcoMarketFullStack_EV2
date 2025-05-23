@@ -21,7 +21,7 @@ public class ProductoService {
     }
 
     public Producto findById(Integer id){
-        return productoRepository.findById(id).get();
+        return productoRepository.findById(id).orElse(null);
     }
 
     public Producto save(Producto producto){

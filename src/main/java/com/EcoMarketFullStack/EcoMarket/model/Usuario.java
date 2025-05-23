@@ -41,7 +41,7 @@ public class Usuario {
     @JoinColumn(name = "userId", nullable = false, unique = true)
     private UserId userId;
 
-    @OneToMany(mappedBy = "Usuario")
+    @OneToMany(mappedBy = "usuario")
     @JsonIgnore
     private List<Pedido> pedidos;
 

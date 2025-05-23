@@ -21,16 +21,16 @@ public class Producto {
     private Integer sku;
 
     @Column(unique=true, length = 100, nullable=false)
-    private String nombre_producto;
+    private String nombreProducto;
 
     @Column(unique=true, length=200, nullable=false)
-    private String precio;
+    private Integer precio;
 
     @Column(unique=true, length=100, nullable=false)
     private Integer stock;
 
-    @OneToMany
-    @JoinColumn(name = "sku", nullable = false, unique = true)
+    @ManyToOne
+    @JoinColumn(name = "id_pedido", nullable = false, unique = true)
     private Pedido id_pedido;  // PREGUNTAR SI CREARON LA CLASE ITEM_PEDIDO, PREGUNTAR EL NOMBRE COLUMNA ID DEL PEDIDO
 
 

@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -46,8 +47,9 @@ public class Envio {
     @Column(nullable = false)
     private BigDecimal costoEnvio;
 
-    
-    @OneToOne (mappedBy = "envio")
+
+    @OneToOne(mappedBy = "envio")
+    @JsonBackReference
     private Pedido pedido;
 
     

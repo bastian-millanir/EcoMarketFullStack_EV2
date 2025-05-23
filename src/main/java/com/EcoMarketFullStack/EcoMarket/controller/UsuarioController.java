@@ -53,6 +53,7 @@ public class UsuarioController {
             user.setApellidos(usuario.getApellidos());
             user.setFechaNacimiento(usuario.getFechaNacimiento());
             user.setEmail(usuario.getEmail());
+            user.setUserId(usuario.getUserId());
 
             usuarioService.save(user);
             return ResponseEntity.ok(usuario);

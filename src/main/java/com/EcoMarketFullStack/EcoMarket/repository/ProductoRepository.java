@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface ProductoRepository extends JpaRepository<Producto, Integer> {
-    List<Producto> findByNombreProductos(String nombreProducto); // cambiar atributo en Model Producto 
+    List<Producto> findByNombreProducto(String nombreProducto); // cambiar atributo en Model Producto
     
     Producto findBySku(Integer sku);
 
