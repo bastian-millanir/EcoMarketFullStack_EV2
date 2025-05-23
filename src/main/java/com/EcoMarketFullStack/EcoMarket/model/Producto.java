@@ -24,14 +24,14 @@ public class Producto {
     private String nombre_producto;
 
     @Column(unique=true, length=200, nullable=false)
-    private String precio;
+    private Double precio;
 
-    @Column(unique=true, length=100, nullable=false)
+    @Column(unique=false, length=100, nullable=false)
     private Integer stock;
 
     @ManyToOne
     @JoinColumn(name = "pedido", nullable = false, unique = true)
-    private Pedido pedido;  // 
+    private Pedido pedido;  
 
 
 
